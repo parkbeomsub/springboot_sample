@@ -14,7 +14,9 @@ PID=$(lsof -t -i:$PORT)
 
 if [ -z "$PID" ]; then
 	  echo "포트 $PORT에서 실행 중인 프로세스가 없습니다."
-	    exit 1
+#실행
+          nohup java -jar build/libs/demo-0.0.1-SNAPSHOT.war &
+
 fi
 
 # 프로세스 종료
